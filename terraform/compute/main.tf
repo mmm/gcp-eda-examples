@@ -28,7 +28,6 @@ module "slurm_cluster" {
   cluster_name                  = "g1"
   project = var.project
   zone = var.zone
-  #network_name = "default"
 
   # login_node_count              = 1
 
@@ -48,7 +47,7 @@ module "slurm_cluster" {
       machine_type         = "n1-standard-2"
       static_node_count    = 0
       max_node_count       = 10
-      zone                 = "us-west1-a"
+      zone                 = var.zone
       compute_disk_type    = "pd-standard"
       compute_disk_size_gb = 20
       compute_labels       = {}
